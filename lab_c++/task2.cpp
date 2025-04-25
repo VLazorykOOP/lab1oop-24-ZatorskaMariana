@@ -1,14 +1,14 @@
 #include <iostream>
-#include <climits>  // Додаємо заголовок для INT_MIN
+#include <climits>  
 using namespace std;
 
 int findLastMaxNegativeAfterT(int A[], int N, int T) {
-    int* pA = A;  // Вказівник на перший елемент масиву
-    int* pT = nullptr;  // Вказівник на елемент, рівний T
-    int lastMaxIndex = -1;  // Індекс останнього максимального від'ємного елемента
-    int maxNegative = INT_MIN;  // Максимальне від'ємне значення
+    int* pA = A;  
+    int* pT = nullptr; 
+    int lastMaxIndex = -1;  
+    int maxNegative = INT_MIN;  
 
-    // Шукаємо елемент, рівний T
+ 
     for (int i = 0; i < N; ++i) {
         if (*(pA + i) == T) {
             pT = pA + i;  // Знайшли елемент T, pT вказує на нього
@@ -16,7 +16,6 @@ int findLastMaxNegativeAfterT(int A[], int N, int T) {
         }
     }
 
-    // Якщо елемент T не знайдено, повертаємо -1
     if (pT == nullptr) {
         return -1;
     }
